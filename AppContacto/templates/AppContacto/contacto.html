@@ -1,0 +1,66 @@
+{% extends "AppProyectoFinal/base.html" %}
+
+{% load static %}
+
+{%block content%}
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title">
+        <span>Contacto</span>
+        <h2>Contacto</h2>
+        <p>Contactese con nosotros</p>
+      </div>
+    </div>  
+
+    <div class="container">
+
+      <div class="info-wrap mt-5">
+        <div class="row">
+          <div class="col-lg-4 info">
+            <i class="ri-map-pin-line"></i>
+            <h4>Ubicacion:</h4>
+            <p>Belgrano 293<br>Laboulaye, Córdoba</p>
+          </div>
+
+          <div class="col-lg-4 info mt-4 mt-lg-0">
+            <i class="ri-mail-line"></i>
+            <h4>Email:</h4>
+            <p>rodrigo.programacion@gmail.com<br>contacto@info.com</p>
+          </div>
+
+          <div class="col-lg-4 info mt-4 mt-lg-0">
+            <i class="ri-phone-line"></i>
+            <h4>Telefono:</h4>
+            <p>+1 5589 55488 51<br>+1 5589 22475 14</p>
+          </div>
+        </div>
+      </div>
+    <p></p>
+    <div class="container">
+      <form action="" method="POST">
+        {% csrf_token %}
+        <div class="row">            
+            {{miFormulario.as_table}}
+            <p></p>
+        <div class="text-center"><button type="submit">Enviar mensaje</button></div>
+      </form>
+    </div>
+     
+      
+    {% if "valido" in request.GET %}
+
+    <p>El mensaje ha sido enviado correctamente!</p>
+
+    {% endif %}
+    
+
+  </section><!-- End Contact Section -->
+
+
+  <div class="map">
+    <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+  </div>    
+
+
+{% endblock %}

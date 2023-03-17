@@ -1,0 +1,52 @@
+{% extends 'AppProyectoFinal/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+<div class="container">
+
+    <div style="float: right;" >      
+    {% if request.user.is_authenticated %}  
+
+        {% include "carro/widget.html" %}
+
+    {% else %}
+
+        <div class="alert alert-danger text-center">Aún no te has logeado</div> 
+
+    {% endif %}
+        
+    </div>
+    <div class="row">
+
+{% for producto in productos %}         
+       
+<div class="col-md-3">            
+        <div class="card" style="width: 90%; margin: 5px 5px;">
+
+            <img src="{{producto.imagen.url}}" class="card-img-top">
+
+            <div class="card-body">
+                
+                <h6 class="title">{{producto.nombre}}</h6>
+                <p class="card-text">{{producto.precio}}</p>
+                 
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-primary" href="{% url 'carro:agregar' producto.id %}" role="button">Agregar al carro</a>
+            </div>                
+        </div>
+        
+</div>  
+
+
+{%endfor%}
+<p></p>           
+</div>   
+</div>        
+
+
+{% endblock %}

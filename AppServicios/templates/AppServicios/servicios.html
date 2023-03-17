@@ -1,0 +1,40 @@
+{% extends 'AppProyectoFinal/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="section-title">
+    <span>Servicios</span>
+    <h2>Servicios</h2>
+    <p>En esta seccion podra encontrar todos nuestros cursos y productos</p>
+  </div>
+
+  
+
+ <!-- ======= Team Section ======= -->
+<section id="team" class="team">
+    
+  <div class="container">    
+     
+    <div class="row" style="width: auto;">
+        {% for servicio in servicios %} 
+        <div class="col-lg-3">
+          
+            <div class="pic"><img src="{{servicio.imagen.url}}" style="width: 80%; margin: 25px;"></div>
+            <div class="member-info">
+              <h4>{{servicio.titulo}}</h4>
+              <p>{{servicio.contenido}}</p>
+            </div>
+        </div>        
+        
+        
+        {%endfor%}     
+                
+    </div>  
+  </div>  
+</section><!-- End Team Section -->
+        
+
+
+{% endblock %}

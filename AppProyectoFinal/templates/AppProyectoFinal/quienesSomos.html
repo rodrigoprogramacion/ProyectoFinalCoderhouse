@@ -1,0 +1,22 @@
+{% extends "AppProyectoFinal/base.html" %}
+
+{% load static %}
+
+{%block content%}
+<body>
+    <div class="container" >        
+        <div class="row">
+          <div class="col-4">
+            <h3>Quienes somos?</h3>
+            <p>En AcademiaTopTrading, ofrecemos la mejor plataforma de aprendizaje online porque los estudiantes siempre son el espíritu que nos moviliza.            
+            Es por eso que el programa de aprendizaje se adapta y personaliza fácilmente para satisfacer las necesidades de cada estudiante, sin importar dónde se encuentren ni su nivel de conocimiento.            
+            Con un equipo apasionado, contamos con asistencia por teléfono, email o sesiones de video para que aprendas esta habilidad y te conviertas en un trader profesional.
+            </p>
+        </div>
+          <div class="col-8">
+            <img src="{% static 'AppProyectoFinal/img/academiadetrading.jpg' %} " style="width: 80%; margin-bottom: 30px;">
+        </div>
+        </div>
+      </div>
+</body>
+{% endblock %}

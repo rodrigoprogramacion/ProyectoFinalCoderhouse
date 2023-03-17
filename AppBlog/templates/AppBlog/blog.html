@@ -1,0 +1,34 @@
+{% extends 'AppProyectoFinal/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="section-title">
+    <span>Noticias</span>
+    <h2>Noticias</h2>
+    <p>Bienvenido a nuestra seccion de noticias, aquí podrás informarte sobre los ultimos acontecimientos importantes ocurridos en el mundo del trading.</p>
+  </div> 
+
+ <!-- ======= Team Section ======= -->
+ <section id="team" class="team">
+    {% for post in posts %} 
+    <div class="container">    
+      <div class="row">
+        <div class="col-4"><img src="{{post.imagen.url}}" class="img-fluid rounded"></div>
+        <div class="col-8">
+          <h3>{{post.titulo}}</h3>
+          <span>Autor: {{post.autor}}</span>
+          <h5>{{post.contenido}}</h5>         
+        </div>
+      </div>
+    </div>  
+    <p></p>
+    {%endfor%}            
+   
+      
+  </section><!-- End Team Section -->
+        
+
+
+{% endblock %}

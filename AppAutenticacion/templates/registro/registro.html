@@ -1,0 +1,26 @@
+{% extends 'AppProyectoFinal/base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="section-title">
+    <span>Registro</span>
+    <h2>Registro</h2>     
+</div>
+
+<form action="" method="post">
+
+    {% csrf_token %}
+<div style="width: 30%; margin: auto;">
+    {{form|crispy}}
+
+    <button type="submit" class="btn btn-success">Regístrate</button>
+</div>
+<p></p>
+</form>     
+
+
+{% endblock %}
